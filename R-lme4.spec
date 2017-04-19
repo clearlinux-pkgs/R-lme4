@@ -4,7 +4,7 @@
 #
 Name     : R-lme4
 Version  : 1.1.13
-Release  : 29
+Release  : 30
 URL      : http://cran.r-project.org/src/contrib/lme4_1.1-13.tar.gz
 Source0  : http://cran.r-project.org/src/contrib/lme4_1.1-13.tar.gz
 Summary  : Linear Mixed-Effects Models using 'Eigen' and S4
@@ -15,14 +15,12 @@ Requires: R-Rcpp
 Requires: R-RcppEigen
 Requires: R-minqa
 Requires: R-nloptr
-Requires: R-optimx
 Requires: R-pbkrtest
 BuildRequires : R-Rcpp
 BuildRequires : R-RcppEigen
 BuildRequires : R-knitr
 BuildRequires : R-minqa
 BuildRequires : R-nloptr
-BuildRequires : R-optimx
 BuildRequires : R-pbkrtest
 BuildRequires : clr-R-helpers
 
@@ -50,11 +48,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1492610452
+export SOURCE_DATE_EPOCH=1492611085
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1492610452
+export SOURCE_DATE_EPOCH=1492611085
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
