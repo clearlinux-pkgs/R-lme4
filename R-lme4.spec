@@ -4,7 +4,7 @@
 #
 Name     : R-lme4
 Version  : 1.1.13
-Release  : 31
+Release  : 32
 URL      : http://cran.r-project.org/src/contrib/lme4_1.1-13.tar.gz
 Source0  : http://cran.r-project.org/src/contrib/lme4_1.1-13.tar.gz
 Summary  : Linear Mixed-Effects Models using 'Eigen' and S4
@@ -13,11 +13,13 @@ License  : GPL-2.0+
 Requires: R-lme4-lib
 Requires: R-Rcpp
 Requires: R-RcppEigen
+Requires: R-ggplot2
 Requires: R-minqa
 Requires: R-nloptr
 Requires: R-pbkrtest
 BuildRequires : R-Rcpp
 BuildRequires : R-RcppEigen
+BuildRequires : R-ggplot2
 BuildRequires : R-knitr
 BuildRequires : R-minqa
 BuildRequires : R-nloptr
@@ -48,11 +50,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1492611085
+export SOURCE_DATE_EPOCH=1492800189
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1492611085
+export SOURCE_DATE_EPOCH=1492800189
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -80,6 +82,7 @@ R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/lib
 /usr/lib64/R/library/lme4/INDEX
 /usr/lib64/R/library/lme4/Meta/Rd.rds
 /usr/lib64/R/library/lme4/Meta/data.rds
+/usr/lib64/R/library/lme4/Meta/features.rds
 /usr/lib64/R/library/lme4/Meta/hsearch.rds
 /usr/lib64/R/library/lme4/Meta/links.rds
 /usr/lib64/R/library/lme4/Meta/nsInfo.rds
