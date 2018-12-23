@@ -4,7 +4,7 @@
 #
 Name     : R-lme4
 Version  : 1.1.19
-Release  : 60
+Release  : 61
 URL      : https://cran.r-project.org/src/contrib/lme4_1.1-19.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/lme4_1.1-19.tar.gz
 Summary  : Linear Mixed-Effects Models using 'Eigen' and S4
