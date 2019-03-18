@@ -4,22 +4,13 @@
 #
 Name     : R-lme4
 Version  : 1.1.21
-Release  : 66
+Release  : 67
 URL      : https://cran.r-project.org/src/contrib/lme4_1.1-21.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/lme4_1.1-21.tar.gz
 Summary  : Linear Mixed-Effects Models using 'Eigen' and S4
 Group    : Development/Tools
 License  : GPL-2.0+
 Requires: R-lme4-lib = %{version}-%{release}
-Requires: R-assertthat
-Requires: R-cli
-Requires: R-gtable
-Requires: R-highr
-Requires: R-lazyeval
-Requires: R-plyr
-Requires: R-scales
-Requires: R-tibble
-Requires: R-withr
 BuildRequires : R-Rcpp
 BuildRequires : R-RcppEigen
 BuildRequires : R-assertthat
@@ -68,10 +59,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552869347
+export SOURCE_DATE_EPOCH=1552877496
 
 %install
-export SOURCE_DATE_EPOCH=1552869347
+export SOURCE_DATE_EPOCH=1552877496
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
