@@ -5,6 +5,7 @@ R-arm
 R-broom
 R-car
 R-effects
+R-emmeans
 R-flexmix
 R-gamm4
 R-joineRML

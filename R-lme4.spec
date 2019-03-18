@@ -4,27 +4,45 @@
 #
 Name     : R-lme4
 Version  : 1.1.21
-Release  : 65
+Release  : 66
 URL      : https://cran.r-project.org/src/contrib/lme4_1.1-21.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/lme4_1.1-21.tar.gz
 Summary  : Linear Mixed-Effects Models using 'Eigen' and S4
 Group    : Development/Tools
 License  : GPL-2.0+
 Requires: R-lme4-lib = %{version}-%{release}
-Requires: R-Rcpp
-Requires: R-RcppEigen
-Requires: R-dfoptim
-Requires: R-minqa
-Requires: R-nloptr
-Requires: R-pbkrtest
+Requires: R-assertthat
+Requires: R-cli
+Requires: R-gtable
+Requires: R-highr
+Requires: R-lazyeval
+Requires: R-plyr
+Requires: R-scales
+Requires: R-tibble
+Requires: R-withr
 BuildRequires : R-Rcpp
 BuildRequires : R-RcppEigen
+BuildRequires : R-assertthat
+BuildRequires : R-bbmle
+BuildRequires : R-car
+BuildRequires : R-cli
 BuildRequires : R-dfoptim
+BuildRequires : R-ggplot2
+BuildRequires : R-gtable
+BuildRequires : R-highr
 BuildRequires : R-knitr
+BuildRequires : R-lazyeval
 BuildRequires : R-minqa
+BuildRequires : R-munsell
 BuildRequires : R-nloptr
 BuildRequires : R-pbkrtest
+BuildRequires : R-plyr
+BuildRequires : R-rlang
+BuildRequires : R-scales
+BuildRequires : R-tibble
+BuildRequires : R-withr
 BuildRequires : buildreq-R
+BuildRequires : texlive
 
 %description
 Catalog of currently-failing examples (commented out, testsx, etc.):
@@ -50,10 +68,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1551851182
+export SOURCE_DATE_EPOCH=1552869347
 
 %install
-export SOURCE_DATE_EPOCH=1551851182
+export SOURCE_DATE_EPOCH=1552869347
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -89,8 +107,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library lme4|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  lme4 || :
 
 
 %files
@@ -141,7 +158,6 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/lme4/help/paths.rds
 /usr/lib64/R/library/lme4/html/00Index.html
 /usr/lib64/R/library/lme4/html/R.css
-/usr/lib64/R/library/lme4/libs/symbols.rds
 /usr/lib64/R/library/lme4/testdata/Johnson.rda
 /usr/lib64/R/library/lme4/testdata/Rplots.pdf
 /usr/lib64/R/library/lme4/testdata/SO_sep25.RData
@@ -180,6 +196,100 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/lme4/testdata/tprfm1.RData
 /usr/lib64/R/library/lme4/testdata/trees513.R
 /usr/lib64/R/library/lme4/testdata/trees513.RData
+/usr/lib64/R/library/lme4/tests/AAAtest-all.R
+/usr/lib64/R/library/lme4/tests/HSAURtrees.R
+/usr/lib64/R/library/lme4/tests/README
+/usr/lib64/R/library/lme4/tests/REMLdev.R
+/usr/lib64/R/library/lme4/tests/Rplots.pdf
+/usr/lib64/R/library/lme4/tests/ST.R
+/usr/lib64/R/library/lme4/tests/agridat_gotway.R
+/usr/lib64/R/library/lme4/tests/bootMer.R
+/usr/lib64/R/library/lme4/tests/boundary.R
+/usr/lib64/R/library/lme4/tests/confint.R
+/usr/lib64/R/library/lme4/tests/devCritFun.R
+/usr/lib64/R/library/lme4/tests/devfunQ.R
+/usr/lib64/R/library/lme4/tests/drop.R
+/usr/lib64/R/library/lme4/tests/drop1contrasts.R
+/usr/lib64/R/library/lme4/tests/dynload.R
+/usr/lib64/R/library/lme4/tests/elston.R
+/usr/lib64/R/library/lme4/tests/evalCall.R
+/usr/lib64/R/library/lme4/tests/extras.R
+/usr/lib64/R/library/lme4/tests/falsezero_dorie.R
+/usr/lib64/R/library/lme4/tests/fewlevels.R
+/usr/lib64/R/library/lme4/tests/getME.R
+/usr/lib64/R/library/lme4/tests/glmer-1.R
+/usr/lib64/R/library/lme4/tests/glmerControlPass.R
+/usr/lib64/R/library/lme4/tests/glmerWarn.R
+/usr/lib64/R/library/lme4/tests/glmmExt.R
+/usr/lib64/R/library/lme4/tests/glmmWeights.R
+/usr/lib64/R/library/lme4/tests/hatvalues.R
+/usr/lib64/R/library/lme4/tests/is.R
+/usr/lib64/R/library/lme4/tests/lmList-tst.R
+/usr/lib64/R/library/lme4/tests/lme-tst-fits.rda
+/usr/lib64/R/library/lme4/tests/lme4_nlme.R
+/usr/lib64/R/library/lme4/tests/lmer-0.R
+/usr/lib64/R/library/lme4/tests/lmer-1.R
+/usr/lib64/R/library/lme4/tests/lmer-1.Rout.save
+/usr/lib64/R/library/lme4/tests/lmer-conv.R
+/usr/lib64/R/library/lme4/tests/lmer2_ex.R
+/usr/lib64/R/library/lme4/tests/methods.R
+/usr/lib64/R/library/lme4/tests/minval.R
+/usr/lib64/R/library/lme4/tests/mkRout
+/usr/lib64/R/library/lme4/tests/modFormula.R
+/usr/lib64/R/library/lme4/tests/nbinom.R
+/usr/lib64/R/library/lme4/tests/nlmer-conv.R
+/usr/lib64/R/library/lme4/tests/nlmer.R
+/usr/lib64/R/library/lme4/tests/nlmer.Rout.save
+/usr/lib64/R/library/lme4/tests/offset.R
+/usr/lib64/R/library/lme4/tests/optimizer.R
+/usr/lib64/R/library/lme4/tests/polytomous.R
+/usr/lib64/R/library/lme4/tests/prLogistic.R
+/usr/lib64/R/library/lme4/tests/predict_basis.R
+/usr/lib64/R/library/lme4/tests/predsim.R
+/usr/lib64/R/library/lme4/tests/priorWeights.R
+/usr/lib64/R/library/lme4/tests/priorWeightsModComp.R
+/usr/lib64/R/library/lme4/tests/profile-tst.R
+/usr/lib64/R/library/lme4/tests/refit.R
+/usr/lib64/R/library/lme4/tests/refit_allequal.RData
+/usr/lib64/R/library/lme4/tests/resids.R
+/usr/lib64/R/library/lme4/tests/respiratory.R
+/usr/lib64/R/library/lme4/tests/savecopy.rda
+/usr/lib64/R/library/lme4/tests/simulate.R
+/usr/lib64/R/library/lme4/tests/testOptControl.R
+/usr/lib64/R/library/lme4/tests/test_times.R
+/usr/lib64/R/library/lme4/tests/test_timings.RData
+/usr/lib64/R/library/lme4/tests/testcolonizer.R
+/usr/lib64/R/library/lme4/tests/testcrab.R
+/usr/lib64/R/library/lme4/tests/testthat/test-NAhandling.R
+/usr/lib64/R/library/lme4/tests/testthat/test-allFit.R
+/usr/lib64/R/library/lme4/tests/testthat/test-catch.R
+/usr/lib64/R/library/lme4/tests/testthat/test-doubleVertNotation.R
+/usr/lib64/R/library/lme4/tests/testthat/test-factors.R
+/usr/lib64/R/library/lme4/tests/testthat/test-formulaEval.R
+/usr/lib64/R/library/lme4/tests/testthat/test-glmFamily.R
+/usr/lib64/R/library/lme4/tests/testthat/test-glmer.R
+/usr/lib64/R/library/lme4/tests/testthat/test-glmernb.R
+/usr/lib64/R/library/lme4/tests/testthat/test-glmmFail.R
+/usr/lib64/R/library/lme4/tests/testthat/test-lmList.R
+/usr/lib64/R/library/lme4/tests/testthat/test-lmer.R
+/usr/lib64/R/library/lme4/tests/testthat/test-lmerResp.R
+/usr/lib64/R/library/lme4/tests/testthat/test-methods.R
+/usr/lib64/R/library/lme4/tests/testthat/test-methods.Rout
+/usr/lib64/R/library/lme4/tests/testthat/test-nbinom.R
+/usr/lib64/R/library/lme4/tests/testthat/test-nlmer.R
+/usr/lib64/R/library/lme4/tests/testthat/test-oldRZXfailure.R
+/usr/lib64/R/library/lme4/tests/testthat/test-predict.R
+/usr/lib64/R/library/lme4/tests/testthat/test-ranef.R
+/usr/lib64/R/library/lme4/tests/testthat/test-rank.R
+/usr/lib64/R/library/lme4/tests/testthat/test-resids.R
+/usr/lib64/R/library/lme4/tests/testthat/test-start.R
+/usr/lib64/R/library/lme4/tests/testthat/test-stepHalving.R
+/usr/lib64/R/library/lme4/tests/testthat/test-summary.R
+/usr/lib64/R/library/lme4/tests/testthat/test-utils.R
+/usr/lib64/R/library/lme4/tests/throw.R
+/usr/lib64/R/library/lme4/tests/utils.R
+/usr/lib64/R/library/lme4/tests/varcorr.R
+/usr/lib64/R/library/lme4/tests/vcov-etc.R
 /usr/lib64/R/library/lme4/vignettedata/calcium.txt
 /usr/lib64/R/library/lme4/vignettedata/mcmcsampdat.RData
 
