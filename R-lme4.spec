@@ -4,7 +4,7 @@
 #
 Name     : R-lme4
 Version  : 1.1.21
-Release  : 68
+Release  : 69
 URL      : https://cran.r-project.org/src/contrib/lme4_1.1-21.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/lme4_1.1-21.tar.gz
 Summary  : Linear Mixed-Effects Models using 'Eigen' and S4
@@ -59,10 +59,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552877496
+export SOURCE_DATE_EPOCH=1552888797
 
 %install
-export SOURCE_DATE_EPOCH=1552877496
+export SOURCE_DATE_EPOCH=1552888797
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
