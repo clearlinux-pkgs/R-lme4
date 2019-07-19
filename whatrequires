@@ -10,8 +10,12 @@ R-flexmix
 R-gamm4
 R-joineRML
 R-lmerTest
+R-mi
 R-mlmRev
+R-modelr
 R-multcomp
 R-ordinal
 R-pbkrtest
+R-rstanarm
+R-sem
 R-treatSens
