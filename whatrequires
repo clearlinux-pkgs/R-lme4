@@ -2,7 +2,6 @@
 R-BradleyTerry2
 R-afex
 R-arm
-R-broom
 R-car
 R-effects
 R-emmeans
@@ -10,12 +9,8 @@ R-flexmix
 R-gamm4
 R-joineRML
 R-lmerTest
-R-mi
 R-mlmRev
-R-modelr
-R-multcomp
 R-ordinal
 R-pbkrtest
 R-rstanarm
-R-sem
 R-treatSens
