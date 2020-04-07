@@ -1,7 +1,4 @@
-1.1.21
-R-Rcpp
-R-RcppEigen
+1.1.23
 R-car
 R-ggplot2
 R-pbkrtest
-util-linux
