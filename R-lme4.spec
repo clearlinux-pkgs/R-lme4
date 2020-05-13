@@ -4,7 +4,7 @@
 #
 Name     : R-lme4
 Version  : 1.1.23
-Release  : 79
+Release  : 80
 URL      : https://cran.r-project.org/src/contrib/lme4_1.1-23.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/lme4_1.1-23.tar.gz
 Summary  : Linear Mixed-Effects Models using 'Eigen' and S4
@@ -13,20 +13,14 @@ License  : GPL-2.0+
 Requires: R-lme4-lib = %{version}-%{release}
 Requires: R-Rcpp
 Requires: R-RcppEigen
-Requires: R-car
-Requires: R-ggplot2
 Requires: R-minqa
 Requires: R-nloptr
-Requires: R-pbkrtest
 Requires: R-statmod
 BuildRequires : R-Rcpp
 BuildRequires : R-RcppEigen
-BuildRequires : R-car
-BuildRequires : R-ggplot2
 BuildRequires : R-knitr
 BuildRequires : R-minqa
 BuildRequires : R-nloptr
-BuildRequires : R-pbkrtest
 BuildRequires : R-statmod
 BuildRequires : buildreq-R
 
@@ -45,21 +39,22 @@ lib components for the R-lme4 package.
 
 %prep
 %setup -q -c -n lme4
+cd %{_builddir}/lme4
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1586276133
+export SOURCE_DATE_EPOCH=1589402303
 
 %install
-export SOURCE_DATE_EPOCH=1586276133
+export SOURCE_DATE_EPOCH=1589402303
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
