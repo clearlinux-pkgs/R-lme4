@@ -5,14 +5,10 @@ R-arm
 R-car
 R-effects
 R-emmeans
-R-flexmix
 R-gamm4
 R-joineRML
-R-jomo
 R-lmerTest
 R-mlmRev
-R-modelr
 R-multcomp
-R-ordinal
 R-pbkrtest
 R-rstanarm
