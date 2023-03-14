@@ -4,7 +4,7 @@
 #
 Name     : R-lme4
 Version  : 1.1.32
-Release  : 108
+Release  : 109
 URL      : https://cran.r-project.org/src/contrib/lme4_1.1-32.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/lme4_1.1-32.tar.gz
 Summary  : Linear Mixed-Effects Models using 'Eigen' and S4
@@ -21,9 +21,6 @@ BuildRequires : R-knitr
 BuildRequires : R-minqa
 BuildRequires : R-nloptr
 BuildRequires : buildreq-R
-# Suppress stripping binaries
-%define __strip /bin/true
-%define debug_package %{nil}
 
 %description
 The models and their components are represented using S4 classes and
@@ -47,10 +44,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1678807474
+export SOURCE_DATE_EPOCH=1678809153
 
 %install
-export SOURCE_DATE_EPOCH=1678807474
+export SOURCE_DATE_EPOCH=1678809153
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
