@@ -4,10 +4,10 @@
 # Using build pattern: R
 #
 Name     : R-lme4
-Version  : 1.1.33
-Release  : 113
-URL      : https://cran.r-project.org/src/contrib/lme4_1.1-33.tar.gz
-Source0  : https://cran.r-project.org/src/contrib/lme4_1.1-33.tar.gz
+Version  : 1.1.34
+Release  : 114
+URL      : https://cran.r-project.org/src/contrib/lme4_1.1-34.tar.gz
+Source0  : https://cran.r-project.org/src/contrib/lme4_1.1-34.tar.gz
 Summary  : Linear Mixed-Effects Models using 'Eigen' and S4
 Group    : Development/Tools
 License  : GPL-2.0+
@@ -38,16 +38,19 @@ lib components for the R-lme4 package.
 
 %prep
 %setup -q -n lme4
+pushd ..
+cp -a lme4 buildavx2
+popd
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1682437255
+export SOURCE_DATE_EPOCH=1688575476
 
 %install
-export SOURCE_DATE_EPOCH=1682437255
+export SOURCE_DATE_EPOCH=1688575476
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -85,6 +88,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
 R CMD check --no-manual --no-examples --no-codoc . || :
 
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
@@ -255,6 +259,7 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/lme4/tests/throw.R
 /usr/lib64/R/library/lme4/tests/varcorr.R
 /usr/lib64/R/library/lme4/tests/vcov-etc.R
+/usr/lib64/R/library/lme4/tinytest/test_lme4.R
 
 %files lib
 %defattr(-,root,root,-)
